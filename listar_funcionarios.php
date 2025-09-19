@@ -1,4 +1,6 @@
 <?php  
+    //******* Gabriela Barreto *******/
+    
     // listar_funcionarios.php
     require_once "Funcionario.php";
 

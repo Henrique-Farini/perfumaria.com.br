@@ -1,4 +1,10 @@
-######mariana######
+######mariana#######
+/ \__                      
+(    @\___           
+ /         O       
+/   (_____/        
+/_____/   U        
+
 <?php
 $produtosFile = "produtos.json";
 if (!file_exists($produtosFile)) {

@@ -1,8 +1,11 @@
+
 <?php
 // excluir_Funcionario 
 $funcionariosFile = "funcionarios.json";
 if (!file_exists($funcionariosFile))file_put_contents($funcionariosFile, "[]");
-
+//-----------------------------------//
+//------------CESAR AUGUSTO----------//
+//-----------------------------------//
 $funcionarios = json_decode(file_get_contents($funcionariosFile), true);
 
 $idFuncionarios = $_POST['idFuncionario']?? null;
