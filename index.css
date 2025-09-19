@@ -1,0 +1,89 @@
+.titulo {
+        display: block;
+    text-align: center;
+    border-radius: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+img{
+   
+    width: 200px;
+    height: 200px;
+    display: flex;
+    border-radius: 100px;
+  margin: auto;
+  box-shadow: 1px 1px 1px 1px ;
+ 
+ 
+}
+header {
+    margin-bottom: 20px;
+}
+
+body {
+    background-image: linear-gradient(to right, rgb(174, 14, 78), rgb(254, 131, 152));
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    
+    
+    
+}
+div {
+       border: solid 2px black; 
+       margin: auto;
+    width: 500px;
+    padding: 100px;
+    align-items: center;
+    display: block;
+    text-align: center;
+    background-color: rgb(242, 225, 234);
+    box-shadow: 4px 4px 4px 4px rgb(198, 32, 112);
+     border-radius: 100px;    
+    
+
+}
+
+li{
+    list-style: none;
+    text-decoration: none;
+    list-style: none;
+    margin-bottom: 10px;
+    align-items: center;
+}
+a {
+    display: block;
+    background-color: rgb(254, 131, 152);
+    color: #fff;
+    padding: 12px 20px 12px 20px;
+    border-radius: 8px;
+    text-decoration: none; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+a:hover {
+    background-color: rgb(229, 79, 104);
+    transform: translateY(-3px);
+
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.titulodeopcoes {
+    
+    font-style: italic;
+    color:rgb(51, 52, 52) ;
+    font-size: large;
+
+    
+}

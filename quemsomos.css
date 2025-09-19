@@ -1,0 +1,76 @@
+body {
+    background-image: linear-gradient(to right, rgb(174, 14, 78), rgb(254, 131, 152));
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.sobre-nos {
+    background-color: #f2e5ea;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+    font-style: italic;
+}
+
+
+.titulo {
+    color: #ae0e4e;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.quemsomos {
+    color: #4b4b4b;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.titulonomes {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ae0e4e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+
+.nomes {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    columns: 2; 
+    column-gap: 30px;
+}
+
+.nomes li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 20px;
+}
+
+
+.nomes li::before {
+    content: '•';
+    color: #ff8398;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+}

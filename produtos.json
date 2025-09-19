@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "nome": "malbec",
+        "preco": 200
+    },
+    {
+        "id": 2,
+        "nome": "Ferrari",
+        "preco": 560
+    }
+]

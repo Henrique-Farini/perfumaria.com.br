@@ -1,0 +1,73 @@
+body {
+    background-color: #f4f7f6; /* Fundo suave e claro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center; /* Centraliza o formulário horizontalmente */
+    align-items: center; /* Centraliza o formulário verticalmente */
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 30px 40px; /* Espaçamento interno */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+    width: 100%;
+    max-width: 450px; /* Largura máxima para formulários */
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600; /* Deixa o texto mais legível */
+    color: #555;
+    font-size: 0.95em;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #007bff; /* Borda azul ao focar */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra suave ao focar */
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Efeito sutil de elevação */
+}

@@ -1,11 +1,13 @@
-######mariana#######
-/ \__                      
-(    @\___           
- /         O       
-/   (_____/        
-/_____/   U        
-
 <?php
+/*
+    // mariana
+    / \__
+     @\___
+    /     O
+   /  _____/
+  /_____/  U   //
+
+  */
 $produtosFile = "produtos.json";
 if (!file_exists($produtosFile)) {
     file_put_contents($produtosFile, "[]");
@@ -17,6 +19,7 @@ $produtos = json_decode(file_get_contents($produtosFile), true);
 <head>
     <meta charset="UTF-8">
     <title>Lista de Produtos</title>
+    <link rel="stylesheet" href="listarprodutos.css">
     <head>
     <body>
     <h1>Produtos cadastrados</h1>

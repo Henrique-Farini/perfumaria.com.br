@@ -22,6 +22,7 @@ foreach ($clientes as $c) {
 <head>
     <meta charset="UTF-8">
     <title>Lista de Vendas</title>
+    
 </head>
 <body>
 
