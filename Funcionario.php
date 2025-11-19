@@ -117,71 +117,71 @@
     /—-
 */
  class Funcionario {
+
     private $idFuncionario;
     private $nome;
     private $cpf;
     private $cargo;
     private $salario;
 
-public function __construct($idFuncionario, $nome, $cpf, $cargo, $salario){
- $this->idFuncionario = $idFuncionario;
- $this->nome = $nome;
- $this->cpf = $cpf;
- $this->cargo = $cargo;
- $this->salario = $salario; 
+    public function __construct($idFuncionario, $nome, $cpf, $cargo, $salario){
+        $this->idFuncionario = $idFuncionario;
+        $this->nome = $nome;
+        $this->cpf = $cpf;
+        $this->cargo = $cargo;
+        $this->salario = $salario; 
+    }
 
- }
+    // GETTERS
+    public function getIdFuncionario() {
+        return $this->idFuncionario;
+    }
 
+    public function getNome() {
+        return $this->nome;
+    }
 
-//getters
-public function getldFuncionario() {
-    return $this->idFuncionario;
-}
+    public function getCpf() {
+        return $this->cpf;
+    }
 
+    public function getCargo() {
+        return $this->cargo;
+    }
 
-public function getNome() {
-    return $this->nome;
+    public function getSalario() {
+        return $this->salario;
+    }
 
-}
+    // SETTERS
+    public function setNome($nome) {
+        $this->nome = $nome;
+    }
 
-public function getcpf() {
-    return $this->cpf;
+    public function setCpf($cpf) {
+        $this->cpf = $cpf;
+    }
 
-}
+    public function setCargo($cargo) {
+        $this->cargo = $cargo;
+    }
 
-public function getcargo () {
-    return $this->cargo;
+    public function setSalario($salario) {
+        $this->salario = $salario;
+    }
 
-}
+    // Converte objeto para array (para JSON)
+    public function toArray() {
+        return [
+            "idFuncionario" => $this->idFuncionario,
+            "nome" => $this->nome,
+            "cpf" => $this->cpf,
+            "cargo" => $this->cargo,
+            "salario" => $this->salario
+        ];
+    }
 
-public function getSalario () {
-    return $this->salario;
-}
-
-//setters
-
-public function setNome($nome) {
-    $this->nome = $nome;
-}
-
-public function setSalario($salario) {
-    $this->salario = $salario;
-}
-
-//converter para array (para json)
-public function toArray() {
-    return[
-        "idFuncionario" => $this->idFuncionario,
-        "nome" => $this->nome,
-        "cpf" => $this->cpf,
-        "cargo" => $this->cargo,
-        "salario" => $this->salario,
-    
-    ];
-}
-
-
-//criar objetivo a partir de array (json)
+    // Cria objeto a partir de array (JSON)
     public static function fromArray($data) {
         return new Funcionario(
             $data['idFuncionario'],
@@ -191,6 +191,5 @@ public function toArray() {
             $data['salario']
         );
     }
- }
-
+}
 ?>

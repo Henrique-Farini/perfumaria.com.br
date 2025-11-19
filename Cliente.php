@@ -84,27 +84,57 @@ mmmmmmmmmmmmmmmmmmmmmmmm@@@@@@mm@@##@@MMMM@@######@@@@@@##@@MMmmmm++mmmmMM@@MMmm
 
 require_once "Pessoa.php";
 
+require_once "Pessoa.php";
 
-# classe Cliente é pai e Pessoa é filho#
 class Cliente extends Pessoa {
     private float $credito;
     private float $saldo;
 
-
-# Polimorfismo, colocou o credito e o saldo
+    // Construtor com polimorfismo
     public function __construct($idPessoa, $nome, $cpf, $credito, $saldo) {
         parent::__construct($idPessoa, $nome, $cpf);
         $this->credito = $credito;
-        $this->saldo = $saldo;
+        $this->saldo   = $saldo;
     }
 
+    // Retorna array para armazenar em JSON
     public function toArray() {
         return [
             "idPessoa" => $this->getIdPessoa(),
-            "nome" => $this->getNome(),
-            "cpf" => $this->getCpf(),
-            "credito" => $this->credito,
-            "saldo" => $this->saldo
+            "nome"     => $this->getNome(),
+            "cpf"      => $this->getCpf(),
+            "credito"  => $this->credito,
+            "saldo"    => $this->saldo
         ];
+    }
+
+    // Getter de crédito
+    public function getCredito() {
+        return $this->credito;
+    }
+
+    // Getter de saldo
+    public function getSaldo() {
+        return $this->saldo;
+    }
+
+    // Setters (caso precise atualizar depois)
+    public function setCredito($valor) {
+        $this->credito = $valor;
+    }
+
+    public function setSaldo($valor) {
+        $this->saldo = $valor;
+    }
+
+    // Para recriar objeto a partir de JSON
+    public static function fromArray($arr) {
+        return new Cliente(
+            $arr['idPessoa'],
+            $arr['nome'],
+            $arr['cpf'],
+            $arr['credito'],
+            $arr['saldo']
+        );
     }
 }

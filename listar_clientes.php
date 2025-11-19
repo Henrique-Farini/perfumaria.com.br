@@ -1,17 +1,16 @@
- 
 <!------------------------------------------------------->
-<!----------------🔆EVELYN ESCANAVAQUE🔆---------------->
+<!----------------🔆EVELYN ESCANAVAQUE🔆------------------>
 <!------------------------------------------------------->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de Clientes</title>
 </head>
 <body>
 
-
+<!-- ASCII ART -->
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⠶⢦⣤⠶⠶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⣿⠀⠀⠁⠀ ⠀⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -25,27 +24,38 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡴⠾⣧⡀⠀⠀⠹⣦⠀⠀⠈⢿⡄⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣿⠀⠀⠈⠻⣄⠀⠀⠀⠀⠀⠀⠈⣷⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⢠⡟⠉⠛⢷⣄⠀⠀⠈⠀⠀⠀⠀⠀⠀⣰⠏⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢷⡀⠀⠀⠉⠃⠀⠀⠀⠀⠀⠀⠀⣴⠏⠀⠀⠀⠀⠀⠀⠀ 
+⠀⠀⠀⠀⠀⠀⠀⠀⢷⡀⠀⠀⠉⠃⠀⠀⠀⠀⠀⠀⠀⣴⠏⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣦⡀⠀⠀⠀⠀⠀⠀⢀⣠⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠶⣤⣤⣤⡤⠶⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-   <?php
 
-
+<?php
 $arquivo = "clientes.json";
-if (file_exists($arquivo)){
-    $clientes = json_decode(file_get_contents($arquivo), true);
 
-    echo "<h2>Lista de Cientes</h2>";
-    echo "<ul>";
-    foreach ($clientes as $c){
-        echo "<li>{$c['idPessoa']}-{$c['nome']} - CPF: {$c['cpf']} - Saldo: {$c['saldo']}</li>";
+if (!file_exists($arquivo)) {
+    echo "<h2>Nenhum cliente cadastrado.</h2>";
+    exit;
 }
-    echo "</ul>";
-} else{
-    echo "Nenhum Cliente Cadastrado.";
+
+$clientes = json_decode(file_get_contents($arquivo), true);
+
+echo "<h2>Lista de Clientes</h2>";
+echo "<ul>";
+
+foreach ($clientes as $c) {
+
+    // Segurança — evita erros se faltar algum campo
+    $id = $c['idPessoa'] ?? "Sem ID";
+    $nome = $c['nome'] ?? "Sem Nome";
+    $cpf = $c['cpf'] ?? "Sem CPF";
+    $saldo = number_format($c['saldo'] ?? 0, 2, ',', '.');
+
+    echo "<li>$id - $nome - CPF: $cpf - Saldo: R$$saldo</li>";
 }
-?> 
+
+echo "</ul>";
+?>
+
 </body>
 </html>
